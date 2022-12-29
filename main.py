@@ -23,12 +23,6 @@ def city(text):
 def get_headers():
     return Headers(browser="chrome", os="win").generate()
 
-def find_count_p(lin):
-    pattern = r".*page=(\d+)"
-    result = re.sub(pattern, r"\1", lin)
-    return result
-
-
 def find_count_pages(url):
     html = requests.get(url + "0", headers=get_headers()).text
     soup2 = BeautifulSoup(html, features="lxml")
